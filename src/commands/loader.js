@@ -4,10 +4,9 @@ const { Collection } = require('discord.js');
 async function loadCommands() {
     const commands = new Collection();
 
-    const files = await glob('**/*.js', {
+    const files = await glob('*/**.js', {
         absolute: true,
         cwd: __dirname,
-        ignore: ['loader.js'],
     });
 
     for (const filePath of files) {
