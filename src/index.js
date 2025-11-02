@@ -1,15 +1,7 @@
-process.on('SIGINT', gracefulShutdown);
-process.on('SIGTERM', gracefulShutdown);
+const { startBot } = require('./bot');
 
-const { Client, Events, GatewayIntentBits } = require('discord.js');
-
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-
-client.once(Events.ClientReady, (readyClient) => {
-    console.log(`Ready! Logged in as ${readyClient.user.tag}`);
-});
-
-client.login();
+let client;
+startBot().then(instance => client = instance);
 
 async function gracefulShutdown(signal) {
     console.log(`Received ${signal}. Shutting down...`);
@@ -25,3 +17,6 @@ async function gracefulShutdown(signal) {
         process.exit(1);
     }
 }
+
+process.on('SIGINT', gracefulShutdown);
+process.on('SIGTERM', gracefulShutdown);
