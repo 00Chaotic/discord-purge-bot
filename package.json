@@ -1,0 +1,20 @@
+{
+  "name": "discord-purge-bot",
+  "version": "1.0.0",
+  "description": "A simple Discord bot to help with server purges",
+  "homepage": "https://github.com/00Chaotic/discord-purge-bot#readme",
+  "bugs": {
+    "url": "https://github.com/00Chaotic/discord-purge-bot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/00Chaotic/discord-purge-bot.git"
+  },
+  "license": "MIT",
+  "author": "00Chaotic",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
